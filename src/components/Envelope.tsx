@@ -301,46 +301,6 @@ export default function Envelope() {
                 aria-label="Tap to open invitation"
               />
             )}
-
-            {/* ── Tap to Open text ── */}
-            <motion.div
-              className="absolute bottom-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center text-center z-[15] pointer-events-none"
-              initial={{ opacity: 0, y: 15 }}
-              animate={isOpen ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
-              transition={
-                isOpen
-                  ? { duration: 0.25 }
-                  : { delay: 0.8, duration: 0.8 }
-              }
-            >
-              <p
-                className="text-[14px] tracking-[0.06em] font-serif italic mb-3"
-                style={{ color: "#9B8A70" }}
-              >
-                Appuyez pour ouvrir
-              </p>
-
-              <svg width="130" height="24" viewBox="0 0 130 24" fill="none" className="opacity-95">
-                <path d="M5 12 L45 12" stroke="url(#gold-grad-left)" strokeWidth="1" strokeLinecap="round" />
-                <path d="M85 12 L125 12" stroke="url(#gold-grad-right)" strokeWidth="1" strokeLinecap="round" />
-                <path d="M45 12 C50 12, 53 8, 55 12 C57 16, 60 12, 65 12" stroke="#C4943A" strokeWidth="1" />
-                <path d="M85 12 C80 12, 77 8, 75 12 C73 16, 70 12, 65 12" stroke="#C4943A" strokeWidth="1" />
-                <path d="M65 5 L69 12 L65 19 L61 12 Z" fill="#C4943A" />
-                <circle cx="65" cy="12" r="1.5" fill="#FFFDFB" />
-                <circle cx="4" cy="12" r="1.5" fill="#C4943A" />
-                <circle cx="126" cy="12" r="1.5" fill="#C4943A" />
-                <defs>
-                  <linearGradient id="gold-grad-left" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="transparent" />
-                    <stop offset="100%" stopColor="#C4943A" />
-                  </linearGradient>
-                  <linearGradient id="gold-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#C4943A" />
-                    <stop offset="100%" stopColor="transparent" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
