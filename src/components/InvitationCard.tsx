@@ -175,11 +175,20 @@ export default function InvitationCard() {
           transition={{ duration: 1.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: heroTextY }}
         >
-          {/* Drastically reduced sizes to fit between the curtains */}
-          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-sm opacity-95">
+          {/* ── NEW: Dedicated Breathing Blob & Grain Behind Names ── */}
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[40vh] rounded-full blur-[60px] opacity-40 bg-[#D4A84B] pointer-events-none z-[-1]"
+            animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.45, 0.25] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <div className="absolute inset-[-20%] pointer-events-none z-[-1] opacity-[0.08] mix-blend-overlay"
+               style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }} 
+          />
+
+          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-md opacity-95">
             Moideen
           </h1>
-          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-sm opacity-95 -mt-2">
+          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-md opacity-95 -mt-2">
             Shahil
           </h1>
           
@@ -187,16 +196,16 @@ export default function InvitationCard() {
             &amp;
           </p>
           
-          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-sm opacity-95">
+          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none text-[#6B4C2F] drop-shadow-md opacity-95">
             Mariyam
           </h1>
-          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none mb-6 text-[#6B4C2F] drop-shadow-sm opacity-95 -mt-2">
+          <h1 className="font-script font-normal text-[clamp(2.5rem,9vw,4.5rem)] leading-none mb-6 text-[#6B4C2F] drop-shadow-md opacity-95 -mt-2">
             Zaheema
           </h1>
 
           {/* Frosted Glass Pill for Date & Location ensuring 100% readability */}
           <motion.div 
-            className="flex flex-col items-center px-6 py-3 rounded-full bg-[#FFFDF9]/50 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_rgba(139,105,20,0.15)]"
+            className="flex flex-col items-center px-6 py-3 rounded-full bg-[#FFFDF9]/60 backdrop-blur-md border border-white/50 shadow-[0_8px_32px_rgba(139,105,20,0.15)]"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
@@ -233,9 +242,8 @@ export default function InvitationCard() {
       {/* ══════════════════════════════════════════════════════ */}
       {/*  SECTION 2 — INVITATION ARCH CARD                    */}
       {/* ══════════════════════════════════════════════════════ */}
-      {/* Greatly reduced mt and mb here to remove dead space */}
       <motion.div
-        className="relative mx-5 mt-10 mb-20 p-[2px] rounded-t-[160px] rounded-b-[24px] z-20"
+        className="relative mx-5 mt-10 mb-14 p-[2px] rounded-t-[160px] rounded-b-[24px] z-20"
         style={{
           background: "linear-gradient(135deg, rgba(196,148,58,0.7), rgba(255,255,255,0.4), rgba(196,148,58,0.7))",
           boxShadow: "0 30px 60px -15px rgba(74,55,40,0.15)",
@@ -328,26 +336,33 @@ export default function InvitationCard() {
       </motion.div>
 
       {/* ══════════════════════════════════════════════════════ */}
-      {/*  SECTION 3 — REDESIGNED COUNTDOWN                    */}
+      {/*  SECTION 3 — REDESIGNED GLOWING COUNTDOWN            */}
       {/* ══════════════════════════════════════════════════════ */}
-      {/* Reduced margins for better flow */}
+      {/* Reduced margins drastically */}
       <motion.div
-        className="relative flex flex-col items-center my-20 z-20 px-6 w-full"
+        className="relative flex flex-col items-center mt-12 mb-16 z-20 px-6 w-full"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
       >
-        <motion.h3 variants={fadeUp} className="font-script font-normal text-[42px] mb-8 text-[#C4943A] drop-shadow-sm text-center">
+        <motion.h3 variants={fadeUp} className="font-script font-normal text-[38px] mb-8 text-[#C4943A] drop-shadow-sm text-center">
           The Countdown Begins
         </motion.h3>
 
         <motion.div 
           variants={fadeUp} 
-          className="flex items-center justify-center w-full max-w-sm"
+          className="flex items-center justify-center w-full max-w-sm relative"
         >
-          {/* Single frosted glass pill design instead of separate boxes */}
-          <div className="flex w-full justify-evenly items-center bg-[#FFFDF9]/60 backdrop-blur-md px-4 py-6 rounded-full border border-[rgba(196,148,58,0.25)] shadow-[0_15px_30px_-10px_rgba(74,55,40,0.1)] relative">
+          {/* Subtle animated glowing aura behind the countdown */}
+          <motion.div 
+            className="absolute inset-0 bg-[#C4943A] rounded-full blur-xl opacity-30"
+            animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Premium Glowing Pill Design */}
+          <div className="flex w-full justify-evenly items-center bg-[#FFFDF9]/70 backdrop-blur-xl px-4 py-5 rounded-full border border-[rgba(196,148,58,0.5)] shadow-[0_0_30px_rgba(196,148,58,0.25)] relative z-10">
             {[
               { value: timeLeft.days, label: "Days" },
               { value: timeLeft.hours, label: "Hours" },
@@ -356,17 +371,21 @@ export default function InvitationCard() {
             ].map((item, idx) => (
               <React.Fragment key={item.label}>
                 <div className="flex flex-col items-center justify-center w-14">
-                  <span className="font-serif text-[28px] leading-none tabular-nums text-[#8B6914] font-medium tracking-wide">
+                  {/* Highlighted glowing numbers */}
+                  <span 
+                    className="font-serif text-[32px] leading-none tabular-nums text-[#C4943A] font-medium tracking-wide"
+                    style={{ textShadow: "0 0 12px rgba(196,148,58,0.5)" }}
+                  >
                     {String(item.value).padStart(2, "0")}
                   </span>
-                  <span className="text-[8px] uppercase tracking-[0.2em] mt-2 text-[#806654] font-semibold">
+                  <span className="text-[8px] uppercase tracking-[0.2em] mt-2 text-[#806654] font-bold">
                     {item.label}
                   </span>
                 </div>
                 
-                {/* Delicate separating lines instead of colons */}
+                {/* Delicate separating lines */}
                 {idx !== 3 && (
-                  <div className="w-[1px] h-8 bg-gradient-to-b from-transparent via-[rgba(196,148,58,0.4)] to-transparent" />
+                  <div className="w-[1px] h-8 bg-gradient-to-b from-transparent via-[rgba(196,148,58,0.6)] to-transparent" />
                 )}
               </React.Fragment>
             ))}
@@ -375,70 +394,16 @@ export default function InvitationCard() {
       </motion.div>
 
       {/* ══════════════════════════════════════════════════════ */}
-      {/*  SECTION 4 — RSVP FORM                               */}
+      {/*  SECTION 4 — LOCATION & MAP                          */}
       {/* ══════════════════════════════════════════════════════ */}
       <motion.div
-        className="relative flex flex-col items-center my-20 px-8 z-20 max-w-md mx-auto"
+        className="relative flex flex-col items-center mt-12 pb-24 px-6 z-20"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
       >
-        <motion.h3 variants={fadeUp} className="font-script font-normal text-[42px] mb-8 text-[#C4943A] drop-shadow-sm text-center">
-          Confirm Your Presence
-        </motion.h3>
-
-        <motion.form variants={fadeUp} className="w-full space-y-8 bg-[#FFFDF9]/60 p-8 rounded-[28px] backdrop-blur-md border border-[rgba(196,148,58,0.2)] shadow-[0_20px_40px_-10px_rgba(74,55,40,0.08)]">
-          <div>
-            <label className="block text-[11px] font-serif uppercase tracking-[0.2em] mb-3 text-[#5A4535]">Full Name</label>
-            <input 
-              type="text" 
-              className="w-full bg-transparent border-b border-[#C4943A] pb-3 text-[16px] font-serif text-[#4A3728] focus:outline-none focus:border-[#8B6914] transition-colors placeholder:text-[#806654]/50"
-              placeholder="e.g. Mr. & Mrs. Ahmed"
-            />
-          </div>
-          <div>
-            <label className="block text-[11px] font-serif uppercase tracking-[0.2em] mb-3 text-[#5A4535]">Number of Guests</label>
-            <input 
-              type="number" 
-              className="w-full bg-transparent border-b border-[#C4943A] pb-3 text-[16px] font-serif text-[#4A3728] focus:outline-none focus:border-[#8B6914] transition-colors"
-              min="1"
-            />
-          </div>
-          <div className="pt-2">
-            <label className="block text-[11px] font-serif uppercase tracking-[0.2em] mb-5 text-[#5A4535]">Will you attend?</label>
-            <div className="space-y-4">
-              <label className="flex items-center gap-4 cursor-pointer group">
-                <div className="w-5 h-5 rounded-full border border-[#C4943A] group-hover:bg-[#E8DCCB] transition-colors" />
-                <span className="text-[15px] font-serif text-[#4A3728]">Joyfully accept</span>
-              </label>
-              <label className="flex items-center gap-4 cursor-pointer group">
-                <div className="w-5 h-5 rounded-full border border-[#C4943A] group-hover:bg-[#E8DCCB] transition-colors" />
-                <span className="text-[15px] font-serif text-[#4A3728]">Regretfully decline</span>
-              </label>
-            </div>
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full mt-8 py-4 bg-gradient-to-r from-[#8B6914] to-[#C4943A] text-white font-serif uppercase tracking-[0.3em] text-[12px] rounded-xl shadow-[0_15px_30px_-10px_rgba(139,105,20,0.5)] transition-shadow hover:shadow-[0_20px_40px_-10px_rgba(139,105,20,0.6)]"
-          >
-            Submit RSVP
-          </motion.button>
-        </motion.form>
-      </motion.div>
-
-      {/* ══════════════════════════════════════════════════════ */}
-      {/*  SECTION 5 — LOCATION & MAP                          */}
-      {/* ══════════════════════════════════════════════════════ */}
-      <motion.div
-        className="relative flex flex-col items-center mt-16 pb-24 px-6 z-20"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={staggerContainer}
-      >
-        <motion.h3 variants={fadeUp} className="font-script font-normal text-[42px] mb-8 text-[#C4943A] drop-shadow-sm text-center">
+        <motion.h3 variants={fadeUp} className="font-script font-normal text-[38px] mb-8 text-[#C4943A] drop-shadow-sm text-center">
           Get Directions
         </motion.h3>
 
@@ -447,7 +412,7 @@ export default function InvitationCard() {
           className="w-full max-w-[340px] aspect-square rounded-[32px] overflow-hidden relative z-20 bg-white"
           style={{ 
             border: "8px solid rgba(255,253,249,0.9)", 
-            boxShadow: "0 30px 60px -15px rgba(74,55,40,0.25)",
+            boxShadow: "0 25px 50px -15px rgba(74,55,40,0.25)",
           }}
         >
           <iframe
@@ -467,16 +432,23 @@ export default function InvitationCard() {
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] font-serif px-8 py-3.5 rounded-full transition-all hover:bg-[#F8EFE6] hover:text-[#3d2b1a]"
-          style={{ border: "1px solid rgba(196,148,58,0.5)", color: "#8B6914" }}
+          style={{ border: "1px solid rgba(196,148,58,0.5)", color: "#8B6914", boxShadow: "0 0 15px rgba(196,148,58,0.15)" }}
         >
           Open in Maps
         </motion.a>
 
-        {/* ── Bottom Floating Chandelier ── */}
+        {/* ── NEW: Bottom Floating Chandelier with Golden Shining Effect ── */}
         <motion.div 
           variants={fadeUp}
-          className="relative w-44 h-44 mt-20 pointer-events-none"
+          className="relative w-48 h-48 mt-10 pointer-events-none"
         >
+          {/* Pulsing Golden Aura behind Chandelier */}
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#C4943A] rounded-full blur-[40px] opacity-40 z-[-1]"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+
           <motion.div
             className="w-full h-full relative"
             animate={{ y: [0, -8, 0], rotate: [1.5, -1.5, 1.5] }}
@@ -486,13 +458,18 @@ export default function InvitationCard() {
               src="/chandelier.png"
               alt=""
               fill
-              className="object-contain opacity-80"
-              style={{ filter: "drop-shadow(0 15px 20px rgba(139,105,20,0.2))" }}
+              className="object-contain opacity-90"
+              style={{ filter: "drop-shadow(0 15px 25px rgba(196,148,58,0.5))" }}
             />
           </motion.div>
         </motion.div>
 
-        <motion.p variants={fadeUp} className="font-script font-normal text-[34px] mt-4 text-[#C4943A] drop-shadow-sm text-center">
+        {/* Shimmering Text for an eye-catching finish */}
+        <motion.p 
+          variants={fadeUp} 
+          className="font-script font-normal text-[36px] mt-6 text-transparent bg-clip-text bg-gradient-to-r from-[#8B6914] via-[#D4A84B] to-[#8B6914] drop-shadow-sm text-center"
+          style={{ backgroundSize: "200% auto", animation: "shimmer 3s linear infinite" }}
+        >
           Looking forward to hosting you
         </motion.p>
         

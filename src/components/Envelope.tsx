@@ -171,7 +171,7 @@ export default function Envelope() {
             {/* Bottom Flap — peels back on its bottom hinge */}
             <motion.div
               className="absolute left-0 bottom-0 w-full h-[54%] pointer-events-none origin-bottom"
-              style={{ zIndex: 4, transformStyle: "preserve-3d" }}
+              style={{ zIndex: 1, transformStyle: "preserve-3d" }}
               animate={isOpen ? { rotateX: 180 } : { rotateX: 0 }}
               transition={{ ...flapTransition, delay: isOpen ? 0.15 : 0 }}
             >
