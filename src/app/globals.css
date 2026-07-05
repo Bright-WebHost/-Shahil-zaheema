@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
 :root {
   --gold-deep: #8B6914;
   --gold-rich: #C4943A;
