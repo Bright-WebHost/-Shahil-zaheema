@@ -252,6 +252,14 @@ export default function Envelope() {
               }
               transition={isOpen ? sealLiftTransition : sealIdleTransition}
             >
+              {/* Small subtle orbiting ring to hint at interactivity */}
+              <motion.div
+                className="absolute inset-0 rounded-full border border-[rgba(196,148,58,0.3)] pointer-events-none"
+                style={{ scale: 1.15 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              />
+
               <Image
                 src="/seal.png"
                 alt="Golden wax seal"
@@ -262,6 +270,15 @@ export default function Envelope() {
                 style={{ filter: "drop-shadow(0 12px 24px rgba(80,58,25,0.35))" }}
                 draggable={false}
               />
+
+              {/* Tap to open text positioned right below the seal */}
+              <motion.p
+                className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px] uppercase tracking-[0.2em] font-serif text-[#9B8A70]"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Tap to open
+              </motion.p>
             </motion.div>
 
             {/* Tap target */}
