@@ -176,7 +176,7 @@ export default function Envelope() {
               transition={{ ...flapTransition, delay: isOpen ? 0.15 : 0 }}
             >
               <img
-                src="/bottom-paper.png"
+                src="/bottom-paper.webp"
                 alt="Envelope bottom flap"
                 className="w-full h-full object-fill"
                 draggable={false}
@@ -192,7 +192,7 @@ export default function Envelope() {
               transition={{ ...flapTransition, delay: isOpen ? 0.15 : 0 }}
             >
               <img
-                src="/right-paper.png"
+                src="/right-paper.webp"
                 alt="Envelope left flap"
                 className="w-full h-full object-fill"
                 draggable={false}
@@ -211,7 +211,7 @@ export default function Envelope() {
               transition={{ ...flapTransition, delay: isOpen ? 0.18 : 0 }}
             >
               <img
-                src="/left-paper.png"
+                src="/left-paper.webp"
                 alt="Envelope right flap"
                 className="w-full h-full object-fill"
                 draggable={false}
@@ -230,7 +230,7 @@ export default function Envelope() {
               transition={{ ...flapTransition, delay: isOpen ? 0.22 : 0 }}
             >
               <img
-                src="/top-paper.png"
+                src="/top-paper.webp"
                 alt="Envelope top flap"
                 className="w-full h-full object-fill"
                 draggable={false}
@@ -261,7 +261,7 @@ export default function Envelope() {
               />
 
               <Image
-                src="/seal.png"
+                src="/seal.webp"
                 alt="Golden wax seal"
                 fill
                 className="object-contain"
