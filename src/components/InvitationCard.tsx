@@ -116,9 +116,8 @@ export default function InvitationCard() {
     >
       <NoiseOverlay />
       <AnimatedBlobs />
-
-      {/* ══════════════════════════════════════════════════════ */}
-      {/*  SECTION 1 — HERO                                    */}
+{/* ══════════════════════════════════════════════════════ */}
+      {/*  SECTION 1 — HERO                                      */}
       {/* ══════════════════════════════════════════════════════ */}
       <div className="relative min-h-[100dvh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
 
@@ -169,40 +168,52 @@ export default function InvitationCard() {
           </motion.div>
         </motion.div>
 
-        {/* Hero Text — plain, printed-invitation feel. No frosted pill, no glass card. */}
+        {/* Hero Text (Names Only - Increased Size) */}
         <motion.div
-          className="relative z-20 flex flex-col items-center mt-[8vh]"
+          className="relative z-20 flex flex-col items-center mt-[4vh]"
           initial={{ opacity: 0, scale: 0.95, filter: "blur(12px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: heroTextY }}
         >
-          <h1 className="font-script font-normal text-[clamp(2rem,8vw,3.5rem)] leading-tight tracking-wide px-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
             Moideen
           </h1>
-          <h1 className="font-script font-normal text-[clamp(2rem,8vw,3.5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
             Shahil
           </h1>
 
-          <p className="font-script font-normal text-2xl md:text-3xl my-0 opacity-90" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>&</p>
+          <p className="font-script font-normal text-3xl md:text-4xl my-0 opacity-90" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>&</p>
 
-          <h1 className="font-script font-normal text-[clamp(2rem,8vw,3.5rem)] leading-tight tracking-wide px-2 -mt-1" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-1" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
             Mariyam
           </h1>
-          <h1 className="font-script font-normal text-[clamp(2rem,8vw,3.5rem)] leading-tight mb-4 tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
             Zaheema
           </h1>
+        </motion.div>
 
-          {/* Date & venue — plain text directly on the scene, matching the reference exactly */}
-          <p className="text-[18px] font-serif font-medium italic tracking-wide text-[#6F4A2E] drop-shadow-[0_2px_8px_rgba(255,248,240,0.7)] mb-0">
-            Wednesday, 22nd July 2026
-          </p>
-          <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] drop-shadow-[0_2px_8px_rgba(255,248,240,0.7)] opacity-95 mt-0">
-            Nikah at 11:00 AM &middot; Mangaluru
-          </p>
+        {/* Date & Venue (More transparent background) */}
+        <motion.div
+          className="absolute bottom-16 z-20 flex flex-col items-center w-full px-6"
+          initial={{ opacity: 0, y: 15, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          style={{ y: heroTextY }}
+        >
+          {/* Frosted Glass Container - Reduced opacity and blur for higher transparency */}
+          <div className="flex flex-col items-center justify-center px-8 py-3 rounded-2xl bg-white/15 backdrop-blur-sm border border-[#C4943A]/15 shadow-[0_8px_32px_rgba(139,105,20,0.1)]">
+            <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#6F4A2E] mt-0 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+              Wednesday, 22nd July 2026
+            </p>
+            <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] opacity-95 mt-1 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+              Nikah at 11:00 AM &middot; Mangaluru
+            </p>
+          </div>
         </motion.div>
 
       </div>
+     
 
       {/* ══════════════════════════════════════════════════════ */}
       {/*  SECTION 2 — INVITATION ARCH CARD                    */}
@@ -224,77 +235,77 @@ export default function InvitationCard() {
             <GeometricBorder className="w-48 h-5 mb-5 opacity-90" />
           </motion.div>
 
-          <motion.p variants={fadeUp} className="font-serif text-[28px] mb-1 text-[#8B6914] drop-shadow-sm">
+          <motion.p variants={fadeUp} className="font-serif text-[30px] mb-1 text-[#8B6914] drop-shadow-sm">
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
           </motion.p>
-          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-0 text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[16px] font-serif italic mb-0 text-[#8B6914]">
             In the Name of Allah
           </motion.p>
-          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-6 text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[16px] font-serif italic mb-5 text-[#8B6914]">
             The Most Gracious, The Most Merciful
           </motion.p>
 
-          <motion.p variants={fadeUp} className="text-[18px] font-serif font-medium mb-4 text-[#5A4535] leading-snug">
-            Mr. Aboobakker Sadik &amp;<br />Mrs. Thasneem Sadik
+          <motion.p variants={fadeUp} className="text-[22px] font-serif font-medium mb-4 text-[#5A4535] leading-snug">
+           <b>Mr. Aboobakker Sadik</b> &amp;<br /> <b>Mrs. Thasneem Sadik</b>
           </motion.p>
 
-          <motion.p variants={fadeUp} className="text-[15px] font-serif font-light leading-snug mb-6 max-w-[280px] text-[#6B5240]">
+          <motion.p variants={fadeUp} className="text-[17px] font-serif font-light leading-snug mb-5 max-w-[280px] text-[#6B5240]">
             By the Grace of Almighty Allah, with immense joy and gratitude, we cordially invite you and your family to grace the wedding of our beloved son
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[28px] tracking-widest mb-0 text-[#C4943A]">
+          <motion.h2 variants={fadeUp} className="font-serif text-[30px] font-bold tracking-widest mb-0 text-[#C4943A]">
             MOIDEEN SHAHIL
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-[12px] font-serif italic mb-5 text-[#806654]">
+          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
             (Grandson of K. H. Mohideen &amp; Late Hussain Bajpe)
           </motion.p>
 
-          <motion.p variants={fadeUp} className="font-script font-normal text-[38px] mb-5 text-[#C4943A]">
+          <motion.p variants={fadeUp} className="font-script font-normal text-[42px] mb-4 text-[#C4943A]">
             with
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[28px] tracking-widest mb-0 text-[#C4943A]">
+          <motion.h2 variants={fadeUp} className="font-serif text-[30px] font-bold tracking-widest mb-0 text-[#C4943A]">
             MARIYAM ZAHEEMA
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-[12px] font-serif italic mb-6 text-[#806654]">
+          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
             (D/O K. Shaffi Sullia)
           </motion.p>
 
           <motion.div variants={fadeUp} className="w-24 h-px mb-5 bg-gradient-to-r from-transparent via-[#C4943A] to-transparent opacity-60" />
 
-          <motion.p variants={fadeUp} className="text-[16px] font-serif font-medium mb-1 text-[#5A4535]">
+          <motion.p variants={fadeUp} className="text-[18px] font-serif font-medium mb-1 text-[#5A4535]">
             Wednesday, 22nd July 2026
           </motion.p>
-          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-4 text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[15px] font-serif italic mb-4 text-[#8B6914]">
             (8th Safar, 1448 H)
           </motion.p>
 
-          <motion.p variants={fadeUp} className="text-[15px] font-serif font-medium mb-1 text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[16px] font-serif font-medium mb-1 text-[#8B6914]">
             Nikah: 11:00 AM
           </motion.p>
-          <motion.p variants={fadeUp} className="text-[13px] font-serif italic mb-4 text-[#806654]">
+          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-4 text-[#806654]">
             Followed by Lunch
           </motion.p>
 
           <motion.div variants={fadeUp} className="w-24 h-px mb-5 bg-gradient-to-r from-transparent via-[#C4943A] to-transparent opacity-60" />
 
-          <motion.p variants={fadeUp} className="text-[15px] font-serif font-medium mb-1 text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[16px] font-serif font-medium mb-1 text-[#8B6914]">
             Venue: Indiana Convention Center
           </motion.p>
-          <motion.p variants={fadeUp} className="text-[13px] font-serif italic mb-4 text-[#806654]">
+          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-4 text-[#806654]">
             Jeppinamogaru, Mangaluru
           </motion.p>
 
           <motion.div variants={fadeUp} className="w-24 h-px mb-5 bg-gradient-to-r from-transparent via-[#C4943A] to-transparent opacity-60" />
 
-          <motion.p variants={fadeUp} className="text-[15px] font-serif font-light leading-snug italic mb-5 max-w-[280px] text-[#6B5240]">
-            <span className="font-medium not-italic block mb-2 text-[17px] text-[#8B6914]">
+          <motion.p variants={fadeUp} className="text-[17px] font-serif font-light leading-snug italic mb-5 max-w-[280px] text-[#6B5240]">
+            <span className="font-medium not-italic block mb-2 text-[19px] text-[#8B6914]">
               In Sha Allah
             </span>
             Your esteemed presence and duas will be the greatest blessing to the bride and groom.
           </motion.p>
 
-          <motion.p variants={fadeUp} className="text-[30px] font-script font-normal text-[#C4943A]">
+          <motion.p variants={fadeUp} className="text-[32px] font-script font-normal text-[#C4943A]">
             Dua is the Best Present
           </motion.p>
         </div>
@@ -349,7 +360,7 @@ export default function InvitationCard() {
         </motion.h3>
 
         {/* Location line — pin icon + name + city, plain text like the reference's "Lieu" section */}
-        <motion.div variants={fadeUp} className="flex flex-col items-center mb-2">
+        <motion.div variants={fadeUp} className="flex flex-col items-center mb-0">
           <PinIcon className="w-6 h-6 mb-0.5" />
           <p className="text-[17px] font-serif font-medium text-[#5A4535]">
             Indiana Convention Center
@@ -361,7 +372,7 @@ export default function InvitationCard() {
 
         <motion.div
           variants={fadeUp}
-          className="relative w-full max-w-[320px] h-[210px] mb-0 pointer-events-none"
+          className="relative w-full max-w-[400px] h-[265px] -mt-6 mb-1 pointer-events-none"
         >
           <Image
             src="/palace.png"

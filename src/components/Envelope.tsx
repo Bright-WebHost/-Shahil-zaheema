@@ -11,22 +11,22 @@ const sealIdleTransition = {
 };
 
 const sealLiftTransition = {
-  duration: 1.2, // ⬅️ Slowed down from 0.8s so it matches the slower vibe
+  duration: 1.2, 
   ease: [0.22, 1, 0.36, 1] as const,
 };
 
 const flapTransition = {
-  duration: 3.5, // ⬅️ Massively increased to 3.5s for a very slow, heavy peel
+  duration: 3.5, // Slow, heavy peel
   ease: [0.25, 1, 0.5, 1] as const, 
 };
 
 const cardRevealTransition = {
-  duration: 2.0, // ⬅️ Slower reveal (was 1.5)
-  delay: 1.5, // ⬅️ Waits 1.5s for the flaps to get halfway open before revealing
+  duration: 2.0, 
+  delay: 1.5, // Waits for the flaps to get halfway open before revealing
   ease: [0.22, 1, 0.36, 1] as const,
 };
 
-const ENVELOPE_LIFETIME_MS = 5500; // ⬅️ Extended to 5.5s so the envelope stays alive during the long animation
+const ENVELOPE_LIFETIME_MS = 5500; // Extended so the envelope stays alive during the long animation
 
 export default function Envelope() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,7 @@ export default function Envelope() {
         initial={{ opacity: 0, y: 30 }}
         animate={isOpen ? { opacity: 0.22, y: 0 } : { opacity: 0.08, y: 15 }}
         transition={{
-          duration: 2.0, // ⬅️ Slowed backdrop reveal
+          duration: 2.0, 
           delay: isOpen ? 1.0 : 0,
           ease: [0.16, 1, 0.3, 1],
         }}
@@ -157,7 +157,6 @@ export default function Envelope() {
               className="absolute inset-0"
               style={{ backgroundColor: "#efe5d8" }}
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              // ⬅️ Delayed so it waits for the 3.5s flaps to get out of the way
               transition={{ duration: 1.0, delay: isOpen ? 2.0 : 0 }} 
             />
 
@@ -255,15 +254,32 @@ export default function Envelope() {
                 style={{ filter: "drop-shadow(0 12px 24px rgba(80,58,25,0.35))" }}
                 draggable={false}
               />
-
-              <motion.p
-                className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-[16px] uppercase tracking-[0.2em] font-serif text-[#C4943A]"
-                animate={{ opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                Tap to open
-              </motion.p>
             </motion.div>
+
+            {/* Tap Indicator (Moved to bottom-12) */}
+            {!isOpen && (
+              <motion.div
+                className="absolute left-1/2 bottom-12 -translate-x-1/2 z-30 flex flex-col items-center gap-2 pointer-events-none"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              >
+                <motion.div
+                  className="flex flex-col items-center"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  {/* Arrow points UP towards the wax seal */}
+                  <svg width="16" height="20" viewBox="0 0 16 20" fill="none" aria-hidden="true">
+                    <path d="M8 19V2" stroke="#C4943A" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M3.5 6.5L8 2l4.5 4.5" stroke="#C4943A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="mt-3 whitespace-nowrap text-[15px] uppercase tracking-[0.22em] font-serif text-[#C4943A]">
+                    Tap to open
+                  </span>
+                </motion.div>
+              </motion.div>
+            )}
 
             {/* Tap target */}
             {!isOpen && (
