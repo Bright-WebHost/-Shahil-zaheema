@@ -40,6 +40,7 @@ export default function Envelope() {
     window.setTimeout(() => setShowEnvelope(false), ENVELOPE_LIFETIME_MS);
     
     if (audioRef.current) {
+      audioRef.current.volume = 0.45;
       audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
     }
   }, [isOpen]);
@@ -51,6 +52,7 @@ export default function Envelope() {
       audio.pause();
       setIsPlaying(false);
     } else {
+      audio.volume = 0.45;
       audio.play().then(() => setIsPlaying(true)).catch(() => {});
     }
   }, [isPlaying]);
@@ -274,7 +276,7 @@ export default function Envelope() {
                     <path d="M8 19V2" stroke="#C4943A" strokeWidth="1.8" strokeLinecap="round" />
                     <path d="M3.5 6.5L8 2l4.5 4.5" stroke="#C4943A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="mt-3 whitespace-nowrap text-[15px] uppercase tracking-[0.22em] font-serif text-[#C4943A]">
+                  <span className="mt-3 whitespace-nowrap text-[17px] uppercase tracking-[0.18em] font-serif font-bold text-[#C4943A]">
                     Tap to open
                   </span>
                 </motion.div>

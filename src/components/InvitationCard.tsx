@@ -202,14 +202,14 @@ export default function InvitationCard() {
           style={{ y: heroTextY }}
         >
           {/* Frosted Glass Container - Reduced opacity and blur for higher transparency */}
-          <div className="flex flex-col items-center justify-center px-8 py-3 rounded-2xl bg-white/15 backdrop-blur-sm border border-[#C4943A]/15 shadow-[0_8px_32px_rgba(139,105,20,0.1)]">
+          
             <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#6F4A2E] mt-0 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
               Wednesday, 22nd July 2026
             </p>
             <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] opacity-95 mt-1 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
               Nikah at 11:00 AM &middot; Mangaluru
             </p>
-          </div>
+
         </motion.div>
 
       </div>
@@ -253,7 +253,7 @@ export default function InvitationCard() {
             By the Grace of Almighty Allah, with immense joy and gratitude, we cordially invite you and your family to grace the wedding of our beloved son
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[30px] font-bold tracking-widest mb-0 text-[#C4943A]">
+          <motion.h2 variants={fadeUp} className="font-serif text-[31px] md:text-[32px] font-bold tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
             MOIDEEN SHAHIL
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
@@ -264,7 +264,7 @@ export default function InvitationCard() {
             with
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[30px] font-bold tracking-widest mb-0 text-[#C4943A]">
+          <motion.h2 variants={fadeUp} className="font-serif text-[31px] md:text-[32px] font-bold tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
             MARIYAM ZAHEEMA
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
@@ -273,19 +273,38 @@ export default function InvitationCard() {
 
           <motion.div variants={fadeUp} className="w-24 h-px mb-5 bg-gradient-to-r from-transparent via-[#C4943A] to-transparent opacity-60" />
 
-          <motion.p variants={fadeUp} className="text-[18px] font-serif font-medium mb-1 text-[#5A4535]">
-            Wednesday, 22nd July 2026
-          </motion.p>
-          <motion.p variants={fadeUp} className="text-[15px] font-serif italic mb-4 text-[#8B6914]">
-            (8th Safar, 1448 H)
-          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col items-center mb-4 gap-2 rounded-[28px] border border-[#C4943A]/15 bg-[rgba(255,248,240,0.58)] px-6 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_22px_rgba(132,88,69,0.08)]"
+          >
+            <div className="flex items-center gap-2 text-[#5A4535]">
+              <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3.5" y="5" width="17" height="15.5" rx="2.2" />
+                <path d="M3.5 9.5h17" />
+                <path d="M8 3.5v4" />
+                <path d="M16 3.5v4" />
+              </svg>
+              <p className="text-[19px] md:text-[20px] font-serif font-bold mb-0 text-[#5A4535] whitespace-nowrap">
+                Wednesday, 22nd July 2026
+              </p>
+            </div>
+            <p className="text-[15px] font-serif italic mb-0 text-[#8B6914]">
+              (8th Safar, 1448 H)
+            </p>
 
-          <motion.p variants={fadeUp} className="text-[16px] font-serif font-medium mb-1 text-[#8B6914]">
-            Nikah: 11:00 AM
-          </motion.p>
-          <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-4 text-[#806654]">
-            Followed by Lunch
-          </motion.p>
+            <div className="flex items-center gap-2 text-[#8B6914] mt-1">
+              <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 7v5l3 2" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+              <p className="text-[17px] md:text-[18px] font-serif font-bold mb-0 text-[#8B6914] whitespace-nowrap">
+                Nikah: 11:00 AM
+              </p>
+            </div>
+            <p className="text-[14px] font-serif italic mb-4 text-[#806654]">
+              Followed by Lunch
+            </p>
+          </motion.div>
 
           <motion.div variants={fadeUp} className="w-24 h-px mb-5 bg-gradient-to-r from-transparent via-[#C4943A] to-transparent opacity-60" />
 
@@ -375,7 +394,7 @@ export default function InvitationCard() {
           className="relative w-full max-w-[400px] h-[265px] -mt-6 mb-1 pointer-events-none"
         >
           <Image
-            src="/palace.png"
+            src="/palace.webp"
             alt="Palace illustration"
             fill
             className="object-contain"
