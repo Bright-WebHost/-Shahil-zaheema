@@ -25,12 +25,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Moideen & Mariyam's Wedding Invitation",
+  title: "Shahil’s Wedding Invitation",
   description:
-    "You are cordially invited to celebrate the blessed union of Moideen and Mariyam. Please join us for this joyous occasion on Wednesday, 22nd July 2026 at Mangaluru. Tap the link to view the invitation.",
+    "You are cordially Invited to the wedding ceremony of Shahil on 22nd July 2026.",
   openGraph: {
-    title: "Moideen & Mariyam's Wedding Invitation",
-    description: "You are cordially invited to celebrate the blessed union of Moideen and Mariyam on Wednesday, 22nd July 2026. Tap to open the invitation.",
+    title: "Shahil’s Wedding Invitation",
+    description: "You are cordially Invited to the wedding ceremony of Shahil on 22nd July 2026..",
     type: "website",
     locale: "en_US",
   },
