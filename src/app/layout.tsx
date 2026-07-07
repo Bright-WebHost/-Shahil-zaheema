@@ -28,6 +28,15 @@ export const metadata: Metadata = {
   title: "Shahil’s Wedding Invitation",
   description:
     "You are cordially Invited to the wedding ceremony of Shahil on 22nd July 2026.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Shahil’s Wedding Invitation",
     description: "You are cordially Invited to the wedding ceremony of Shahil on 22nd July 2026.",
@@ -38,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shahil’s Wedding Invitation",
     description: "You are cordially Invited to the wedding ceremony of Shahil on 22nd July 2026.",
-  }
+  },
 };
 
 export default function RootLayout({
