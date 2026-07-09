@@ -176,19 +176,19 @@ export default function InvitationCard() {
           transition={{ duration: 1.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: heroTextY }}
         >
-          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2" style={{ color: "#7A4D2A", textShadow: "0 3px 10px rgba(87,54,28,0.35), 0 0 20px rgba(255,248,238,0.35)" }}>
             Moideen
           </h1>
-          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#7A4D2A", textShadow: "0 3px 10px rgba(87,54,28,0.35), 0 0 20px rgba(255,248,238,0.35)" }}>
             Shahil
           </h1>
 
-          <p className="font-script font-normal text-3xl md:text-4xl my-0 opacity-90" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>&</p>
+          <p className="font-script font-normal text-3xl md:text-4xl my-0 opacity-95" style={{ color: "#7A4D2A", textShadow: "0 3px 10px rgba(87,54,28,0.35), 0 0 20px rgba(255,248,238,0.35)" }}>&</p>
 
-          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-1" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-1" style={{ color: "#7A4D2A", textShadow: "0 3px 10px rgba(87,54,28,0.35), 0 0 20px rgba(255,248,238,0.35)" }}>
             Mariyam
           </h1>
-          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#9D7049", textShadow: "0 2px 8px rgba(255,244,232,0.35)" }}>
+          <h1 className="font-script font-bold text-[clamp(2.8rem,10vw,5rem)] leading-tight tracking-wide px-2 -mt-2" style={{ color: "#7A4D2A", textShadow: "0 3px 10px rgba(87,54,28,0.35), 0 0 20px rgba(255,248,238,0.35)" }}>
             Zaheema
           </h1>
         </motion.div>
@@ -201,10 +201,10 @@ export default function InvitationCard() {
           transition={{ duration: 1.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: heroTextY }}
         >
-          <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#6F4A2E] mt-0 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+          <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#5A3A22] mt-0 mb-0" style={{ textShadow: "0 2px 8px rgba(255,255,255,0.9), 0 0 12px rgba(255,248,238,0.7)" }}>
             Wednesday, 22nd July 2026
           </p>
-          <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] opacity-95 mt-1 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+          <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#5A3A22] opacity-95 mt-1 mb-0" style={{ textShadow: "0 2px 8px rgba(255,255,255,0.9), 0 0 12px rgba(255,248,238,0.7)" }}>
             Nikah at 11:00 AM &middot; Mangaluru
           </p>
         </motion.div>
@@ -215,7 +215,7 @@ export default function InvitationCard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.3, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[10px] uppercase tracking-[0.35em] text-[#8B5E3C]/80 mb-2">
+          <p className="text-[10px] uppercase tracking-[0.35em] text-[#6B4426] font-semibold mb-2" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.7)" }}>
             Scroll down
           </p>
           <motion.div
