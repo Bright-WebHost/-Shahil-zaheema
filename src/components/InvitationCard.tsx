@@ -193,23 +193,40 @@ export default function InvitationCard() {
           </h1>
         </motion.div>
 
-        {/* Date & Venue (More transparent background) */}
+        {/* Date & Venue */}
         <motion.div
-          className="absolute bottom-16 z-20 flex flex-col items-center w-full px-6"
+          className="absolute bottom-24 z-20 flex flex-col items-center w-full px-6"
           initial={{ opacity: 0, y: 15, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: heroTextY }}
         >
-          {/* Frosted Glass Container - Reduced opacity and blur for higher transparency */}
-          
-            <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#6F4A2E] mt-0 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
-              Wednesday, 22nd July 2026
-            </p>
-            <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] opacity-95 mt-1 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
-              Nikah at 11:00 AM &middot; Mangaluru
-            </p>
+          <p className="text-[18px] font-serif font-bold italic tracking-wide text-[#6F4A2E] mt-0 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+            Wednesday, 22nd July 2026
+          </p>
+          <p className="text-[16px] font-serif font-medium italic tracking-wide text-[#6F4A2E] opacity-95 mt-1 mb-0" style={{ textShadow: "0 1px 4px rgba(255,255,255,0.8)" }}>
+            Nikah at 11:00 AM &middot; Mangaluru
+          </p>
+        </motion.div>
 
+        <motion.div
+          className="absolute bottom-6 z-20 flex flex-col items-center w-full"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.3, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-[10px] uppercase tracking-[0.35em] text-[#8B5E3C]/80 mb-2">
+            Scroll down
+          </p>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="#8B5E3C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14" />
+              <path d="m6 13 6 6 6-6" />
+            </svg>
+          </motion.div>
         </motion.div>
 
       </div>
