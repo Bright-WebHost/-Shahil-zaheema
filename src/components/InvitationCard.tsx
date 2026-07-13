@@ -270,7 +270,7 @@ export default function InvitationCard() {
             By the Grace of Almighty Allah, with immense joy and gratitude, we cordially invite you and your family to grace the wedding of our beloved son
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[31px] md:text-[32px] font-bold tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
+          <motion.h2 variants={fadeUp} className="font-serif text-[30px] md:text-[32px] font-bold tracking-wide md:tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
             MOIDEEN SHAHIL
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
@@ -281,7 +281,7 @@ export default function InvitationCard() {
             with
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="font-serif text-[31px] md:text-[32px] font-bold tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
+          <motion.h2 variants={fadeUp} className="font-serif text-[29px] md:text-[31px] font-bold tracking-wide md:tracking-widest mb-0 text-[#C4943A] whitespace-nowrap">
             MARIYAM ZAHEEMA
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] font-serif italic mb-5 text-[#806654]">
